@@ -1,53 +1,68 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+site: Liam Vereecken
 title: Liam Vereecken
 email: contact@liamvereecken.com
 description: >- # this means to ignore newlines until "baseurl:"
   Liam Vereecken is a Product Manager and aspiring Data Scientist. 
   This website showcases his projects and experience.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "liamvereecken.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://liamvereecken.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
 github_username: LiamVereecken
+paginate: 6
 
-# Build settings
-markdown: kramdown
-#theme: "bulma-clean-theme"
-remote_theme: "chrisrhymes/bulma-clean-theme"
-plugins:
-  - jekyll-feed
-  - jekyll-remote-theme
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /blog/:slug
+  projects:
+    output: true
+    permalink: /project/:slug
 
-#google_analytics: UA-139437028-2  
 defaults:
   -
     scope:
       path: ""
     values:
-      hide_footer: true
-      layout: page
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+  
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-sitemap
+
+paginate: 7
+paginate_path: "/blog/page-:num/"

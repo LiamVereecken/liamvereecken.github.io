@@ -1,0 +1,9 @@
+_data/settings.yml
+	Change favicon & social image
+	change footer tagline
+	Sign up for FormSpree and add functionality
+	Play around with color schemes
+
+Create GTM project post
+Create GTM Retention Analysis post
+Create Hire Me page

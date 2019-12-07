@@ -1,0 +1,66 @@
+title: Liam Vereecken
+email: contact@liamvereecken.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Liam Vereecken is a Product Manager and aspiring Data Scientist. 
+  This website showcases his projects and experience.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "liamvereecken.com" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: ""
+github_username: LiamVereecken
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /blog/:slug
+  projects:
+    output: true
+    permalink: /project/:slug
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+  
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-sitemap
+
+paginate: 7
+paginate_path: "/blog/page-:num/"
