@@ -2,8 +2,7 @@ site: Liam Vereecken
 title: Liam Vereecken
 email: contact@liamvereecken.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Liam Vereecken is a Product Manager and aspiring Data Scientist. 
-  This website showcases his projects and experience.
+  Work in progress.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://liamvereecken.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
